@@ -139,7 +139,8 @@ module.exports = {
           /\.(js|jsx)$/,
           /\.css$/,
           /\.json$/,
-          /\.svg$/
+          /\.svg$/,
+          /\.styl$/
         ],
         loader: 'url-loader',
         options: {
@@ -203,10 +204,18 @@ module.exports = {
         options: {
           name: 'static/media/[name].[hash:8].[ext]'
         }
+      },
+      {
+        test: /\.styl$/,
+        loader: 'style-loader!css-loader!stylus-loader',
+
       }
       // ** STOP ** Are you adding a new loader?
       // Remember to add the new extension(s) to the "url" loader exclusion list.
     ]
+  },
+  stylus: {
+    use: [poststylus(['autoprefixer'])]
   },
   plugins: [
     // Makes some environment variables available in index.html.
