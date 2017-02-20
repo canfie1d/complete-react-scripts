@@ -1,21 +1,17 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './Styles/App.css';
 
-class App extends Component {
-  render() {
+export default class App extends React.Component {
+
+  render () {
+    console.log('Welcome to Helpful Human\'s React boilerplate. Check the console for the App\'s props.', this.props);
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to Ryan and Josh's World</h2>
+      <div className={'app'}>
+        <div className='app__container' >
+          Welcome to Helpful Human's React boilerplate :)
+          {this.props.children}
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
       </div>
     );
   }
 }
-
-export default App;

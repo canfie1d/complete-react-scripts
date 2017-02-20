@@ -1,9 +1,23 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import './index.css';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { browserHistory, Router, Route, IndexRoute } from 'react-router';
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
+import createStore from './Services/Store';
+
+import App from './App';
+import Landing from './Containers/Landing';
+
+const store = createStore();
+
+render(
+  <Provider store={store}>
+    <Router history={browserHistory}>
+      <Route path='/' component={App}>
+        <IndexRoute component={Landing} />
+        {/*<Route path='somepage' component={SomePage} />*/}
+      </Route>
+    </Router>
+  </Provider>
+  , document.getElementById('root')
 );
