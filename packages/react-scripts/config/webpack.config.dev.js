@@ -9,7 +9,9 @@
  */
 // @remove-on-eject-end
 
-var autoprefixer = require('autoprefixer');
+// HH add poststylus and comment autoprefixer
+// var autoprefixer = require('autoprefixer');
+var poststylus = require('poststylus');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
