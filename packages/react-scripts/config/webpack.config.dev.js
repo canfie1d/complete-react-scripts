@@ -169,34 +169,36 @@ module.exports = {
       // "style" loader turns CSS into JS modules that inject <style> tags.
       // In production, we use a plugin to extract that CSS to a file, but
       // in development "style" loader enables hot editing of CSS.
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader', {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 1
-            }
-          }, {
-            loader: 'postcss-loader',
-            options: {
-              ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
-              plugins: function () {
-                return [
-                  autoprefixer({
-                    browsers: [
-                      '>1%',
-                      'last 4 versions',
-                      'Firefox ESR',
-                      'not ie < 9', // React doesn't support IE8 anyway
-                    ]
-                  })
-                ]
-              }
-            }
-          }
-        ]
-      },
+
+      // HH commented css loader
+      // {
+      //   test: /\.css$/,
+      //   use: [
+      //     'style-loader', {
+      //       loader: 'css-loader',
+      //       options: {
+      //         importLoaders: 1
+      //       }
+      //     }, {
+      //       loader: 'postcss-loader',
+      //       options: {
+      //         ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
+      //         plugins: function () {
+      //           return [
+      //             autoprefixer({
+      //               browsers: [
+      //                 '>1%',
+      //                 'last 4 versions',
+      //                 'Firefox ESR',
+      //                 'not ie < 9', // React doesn't support IE8 anyway
+      //               ]
+      //             })
+      //           ]
+      //         }
+      //       }
+      //     }
+      //   ]
+      // },
       // "file" loader for svg
       {
         test: /\.svg$/,
@@ -205,15 +207,16 @@ module.exports = {
           name: 'static/media/[name].[hash:8].[ext]'
         }
       },
+      // HH added stylus loader
       {
         test: /\.styl$/,
-        loader: 'style-loader!css-loader!stylus-loader',
-
+        loader: 'style-loader!css-loader!stylus-loader'
       }
       // ** STOP ** Are you adding a new loader?
       // Remember to add the new extension(s) to the "url" loader exclusion list.
     ]
   },
+  // HH added poststylus autoprefixer
   stylus: {
     use: [poststylus(['autoprefixer'])]
   },
