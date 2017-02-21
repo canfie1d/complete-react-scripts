@@ -219,8 +219,18 @@ module.exports = {
       {
         test: /\.styl$/,
         loader: ExtractTextPlugin.extract(Object.assign({
-          fallback:'style-loader',
-          use:'stylus-loader'
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                importLoaders: 1
+              }
+            },
+            {
+              loader: 'stylus-loader'
+            }
+          ]
         }, extractTextPluginOptions))
       },
       // "file" loader for svg
