@@ -218,7 +218,10 @@ module.exports = {
       // HH added stylus loader
       {
         test: /\.styl$/,
-        loader: ExtractTextPlugin.extract({fallback:'style-loader', use:'stylus-loader'})
+        loader: ExtractTextPlugin.extract(Object.assign({
+          fallback:'style-loader',
+          use:'stylus-loader'
+        }, extractTextPluginOptions))
       },
       // "file" loader for svg
       {
