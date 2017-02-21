@@ -9,7 +9,9 @@
  */
 // @remove-on-eject-end
 
-var autoprefixer = require('autoprefixer');
+// HH add poststylus and comment autoprefixer
+// var autoprefixer = require('autoprefixer');
+var poststylus = require('poststylus');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -215,8 +217,8 @@ module.exports = {
       // },
       // HH added stylus loader
       {
-        test: /\.styl/,
-        loader: ExtractTextPlugin.extract('style', 'css!postcss!stylus')
+        test: /\.styl$/,
+        loader: ExtractTextPlugin.extract({fallback:'style-loader', use:'stylus-loader'})
       },
       // "file" loader for svg
       {
