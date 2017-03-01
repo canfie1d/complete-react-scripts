@@ -238,7 +238,7 @@ module.exports = {
         test: /\.svg$/,
         loader: 'file-loader',
         options: {
-          name: 'static/media/[name].[hash:8].[ext]'
+          name: 'static/media/vector/[name].[hash:8].[ext]'
         }
       }
       // ** STOP ** Are you adding a new loader?
@@ -300,7 +300,8 @@ module.exports = {
     }),
     // Note: this won't work without ExtractTextPlugin.extract(..) in `loaders`.
     new ExtractTextPlugin({
-      filename: cssFilename
+      filename: cssFilename,
+      allChunks: false
     }),
     // Generate a manifest file which contains a mapping of all asset filenames
     // to their corresponding output file so that tools can pick it up without
