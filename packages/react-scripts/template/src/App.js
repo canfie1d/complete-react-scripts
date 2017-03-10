@@ -1,5 +1,4 @@
 import React from 'react';
-// import './Styles/App.css';
 import './App.styl';
 
 export default class App extends React.Component {
