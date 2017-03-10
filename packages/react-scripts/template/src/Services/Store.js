@@ -5,7 +5,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { routerMiddleware } from 'react-router-redux';
 import reducers from '../Reducers';
 
-const middleware = [ thunk, routerMiddleware(browserHistory) ];
+let middleware = [ thunk, routerMiddleware(browserHistory) ];
 
 if (process.env.NODE_ENV !== 'production') {
   const logger = createLogger({ collapsed: true });
