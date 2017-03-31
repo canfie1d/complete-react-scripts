@@ -1,4 +1,4 @@
-#helpful-react-scripts
+# Helpful React Scripts
 
 ##### Usage:
 
