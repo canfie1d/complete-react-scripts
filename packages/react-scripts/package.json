@@ -1,7 +1,7 @@
 {
   "name": "helpful-react-scripts",
-  "version": "0.0.30",
-  "description": "Configuration and scripts for Create React App.",
+  "version": "0.0.32",
+  "description": "A custom application of configuration and scripts for Create React App.",
   "repository": {
     "type": "git",
     "url": "http://github.com/helpfulhuman/create-react-app"
