@@ -1,10 +1,10 @@
-#helpful-react-scripts
+# Helpful React Scripts
 
 ##### Usage:
 
 `npm i create-react-app -g`<br>
 
-`create-react-app my-app -scripts-version helpful-react-scripts`
+`create-react-app my-app --scripts-version helpful-react-scripts`
 
 ##### This package is modified to include the following additional functionality:
 
@@ -29,7 +29,7 @@
 - "postcss-loader"
 - "postcss"
 
-### Planned Updates:
+### Roadmap:
 ###### Accessibility
 - "react-axe"
 
