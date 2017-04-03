@@ -1,0 +1,30 @@
+////////////////////////////////////////
+//      Font-Family Definitions       //
+////////////////////////////////////////
+
+$helvetica= 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+
+///////////////////////////////
+//      Font Variables       //
+///////////////////////////////
+$display-font= $helvetica;
+$display-font--bold= $helvetica;
+$body-font= $helvetica;
+
+////////////////////////////
+//      Font Mixins       //
+////////////////////////////
+displayFontBold() {
+  font-family : $display-font--bold;
+  font-weight : 900;
+}
+
+displayFont() {
+  font-family : $display-font;
+  font-weight : 400;
+}
+
+bodyFont() {
+  font-family : $body-font;
+  font-weight : 400;
+}

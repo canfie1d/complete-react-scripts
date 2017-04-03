@@ -1,0 +1,60 @@
+////////////////////////
+//      REM CALC      //
+////////////////////////
+$base-font-size = 16px;
+
+rem(values) {
+  $base = $base-font-size is a "unit" ? $base-font-size : 16;
+  $result = null;
+
+  for value in values {
+    if type( value ) == "unit" && ( unit( value ) == "px" || unit( value ) == "" ) {
+      value = unit( round( value / $base, 3 ), "rem" )
+
+      if value == "0rem" {
+        value = 0
+      }
+
+      $result = $result != null ? $result value : value
+    }
+  }
+}
+
+////////////////////////
+//      EM CALC       //
+////////////////////////
+em(values) {
+  $base = $base-font-size;
+  $result = null;
+
+  for value in values {
+    if type( value ) == "unit" && ( unit( value ) == "px" || unit( value ) == "" ) {
+      value = unit(round(value / $base, 3 ), "em");
+
+      if value == "0em" {
+        value = 0
+      }
+
+      $result = $result != null ? $result value : value;
+    }
+  }
+}
+
+////////////////////////
+//      Flexbox       //
+////////////////////////
+flexContainer( centerContent = false ) {
+  display   : flex;
+  flex-wrap : wrap;
+
+  if centerContent {
+    justify-content : center;
+    align-items     : center;
+    align-content   : center;
+  }
+}
+
+flexItem(flexGrow = 1, flexShrink = 0, flexBasis = auto, flexSelf = auto) {
+  flex       : flexGrow flexShrink flexBasis;
+  align-self : flexSelf;
+}
