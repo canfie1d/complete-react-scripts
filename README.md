@@ -1,5 +1,5 @@
 ## Helpful React Scripts
-Helpful React Scripts (HRS) is a fork of [Create React App](https://github.com/facebookincubator/create-react-app) that modifies the `react-scripts` package in order to serve as the base React boilerplate project here at [Helpful Human](helpfulhuman.com). Read the [HRS](./packages/react-scripts/README.md) docs.
+Helpful React Scripts (HRS) is a fork of [Create React App](https://github.com/facebookincubator/create-react-app) that modifies the `react-scripts` package in order to serve as the base React boilerplate project here at [Helpful Human](http://helpfulhuman.com). Read the [HRS](./packages/react-scripts/README.md) docs.
 
 **Get up and running in one line**
 
