@@ -3,18 +3,19 @@ import React from 'react';
 export default class Landing extends React.Component {
   render() {
     return (
-      <div className="remove-this">
-        <p>
-          👨‍🚀 Welcome to Helpful Human's React template. Check the console for application properties.
-        </p>
-        <br />
-        <br />
-        <p>Demo Redux store</p>
+      <div className="landing">
+        <p>‍👨‍🚀</p>
         <div>
-          <button onClick={this.props.subtractNumber}>Subtract</button>
-          <button onClick={this.props.addNumber}>Add</button>
+          <h1>Welcome to Helpful Human's React template.</h1>
+          <h2>Check the console for application properties.</h2>
         </div>
-        <p>value: {this.props.number}</p>
+        <h3>Demo Redux store</h3>
+        <br />
+        <button onClick={this.props.subtractNumber}>Subtract</button>
+        <button onClick={this.props.addNumber}>Add</button>
+        <br />
+        <br />
+        <span>value: {this.props.number}</span>
       </div>
     );
   }

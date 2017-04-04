@@ -1,0 +1,36 @@
+.landing {
+  margin: rem(16); // Rem Calc Function
+  padding: rem(16);
+  background: $primary; // Color variables
+  text-align: center;
+  bodyFont(); // Font Stack Mixin
+
+  p {
+    font-size: rem(40);
+  }
+
+  div {
+    flexContainer(false, true, 'column'); // Flex Container Mixin
+    position: relative;
+    margin: rem(15) auto;
+    padding: rem(20);
+    border-radius: 5px;
+    background: $white;
+
+    > h1,
+    > h2 {
+      flexItem(); // Flex Item mixin
+      displayFontBold();
+    }
+
+    &::before {
+      arrow( // Arrow mixin
+        arrowDirection: 'top',
+        arrowHeight: 10px,
+        arrowWidth: 16px,
+        color: $white,
+        positioned: true
+      );
+    }
+  }
+}
