@@ -195,8 +195,8 @@ module.exports = {
       // HH added stylus loader
       {
         test: /\.styl$/,
-        loader: 'style-loader!css-loader!stylus-loader'
-      }
+        loader: 'style-loader?sourceMap!css-loader?sourceMap!stylus-loader?sourceMap',
+      },
       // ** STOP ** Are you adding a new loader?
       // Remember to add the new extension(s) to the "url" loader exclusion list.
     ],
@@ -207,8 +207,8 @@ module.exports = {
       test: /\.styl$/,
       stylus: {
         default: {
-          use: [poststylus(['autoprefixer'])]
-        }
+          use: [poststylus(['autoprefixer'])],
+        },
       },
     }),
     // Makes some environment variables available in index.html.
