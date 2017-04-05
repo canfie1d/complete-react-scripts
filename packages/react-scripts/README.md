@@ -8,30 +8,31 @@
 
 ##### This package is modified to include the following additional functionality:
 
+###### Accessibility Tools
+- `react-aXe`
+
 ###### React Router
-- "react-router"
-- "react-router-redux"
+- `react-router`
+- `react-router-redux`
 
 ###### Redux
-- "react-redux"
-- "redux-logger"
-- "redux-thunk"
+- `react-redux`
+- `redux-logger`
+- `redux-thunk`
 
 ###### Stylus
-- "stylus"
-- "poststylus"
-- "stylus-loader"
+- `stylus`
+- `poststylus`
+- `stylus-loader`
 
 ##### This package is modified to remove the following functionality:
 
 ###### CSS
-- "autoprefixer"
-- "postcss-loader"
-- "postcss"
+- `autoprefixer`
+- `postcss-loader`
+- `postcss`
 
 ### Roadmap:
-###### Accessibility
-- "react-axe"
 
 ###### Fontloader
 - "webfontloader"
@@ -48,6 +49,7 @@ We plan to stay up to date with create-react-app as often as possible.
 
 Note: This package is maintained for our specific needs at Helpful Human and while feature requests are encouraged, they may not align with the needs of Helpful Human.
 
+Note: There is a problem with Stylus reporting error locations correctly in `Node v7.x.x^`. Use Node v6.x.x to remedy.
 
 For additional information, please refer to the following documentation:
 
