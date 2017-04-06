@@ -11,6 +11,18 @@
 
   button {
     margin: .5em
+    border: none
+    font-size: 1em
+    cursor: pointer
+    padding: .5em 1em
+    background: $white
+    displayFontBold();
+    border-radius: rem(5);
+    transition: background 250ms ease
+
+    &:hover {
+      background: darken($white, 15)
+    }
   }
 
   div {
