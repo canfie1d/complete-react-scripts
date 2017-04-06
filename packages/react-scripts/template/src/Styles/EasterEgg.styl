@@ -1,0 +1,48 @@
+.easter-egg
+  display: flex
+  align-items: center
+  justify-content: center
+
+  &__spacheman
+    cursor: pointer
+    user-select: none
+    transition: transform 250ms ease
+    transform: scale(1)
+    transition-delay: 3.4s
+
+    &:hover
+      transform: scale(0)
+
+      & + .easter-egg__rocket
+        left: 55vw
+        top: -10vh
+
+  &__rocket
+    left: 0vw
+    animation: fly 4s linear infinite;
+    backface-visibility: hidden;
+    perspective: 1000px;
+    transition: 4s linear
+    top: 110vh
+    z-index: 1
+    position: fixed
+    transform: rotate(-20deg)
+    color: black // Satisfies aXe warning
+
+@keyframes fly {
+  10%, 90% {
+    transform: rotate(-25deg)
+  }
+
+  20%, 80% {
+    transform: rotate(-20deg)
+  }
+
+  30%, 50%, 70% {
+    transform: rotate(-25deg)
+  }
+
+  40%, 60% {
+    transform: rotate(-20deg);
+  }
+}

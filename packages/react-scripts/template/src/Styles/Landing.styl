@@ -1,9 +1,9 @@
 .landing {
-  margin: rem(16); // Rem Calc Function
+  margin: rem(16);                                          // Rem Calc Function
   padding: rem(16);
-  background: $primary; // Color variables
+  background: $primary;                                       // Color variables
   text-align: center;
-  bodyFont(); // Font Stack Mixin
+  bodyFont();                                                // Font Stack Mixin
 
   p {
     font-size: rem(40);
@@ -14,7 +14,7 @@
   }
 
   div {
-    flexContainer(false, true, 'column'); // Flex Container Mixin
+    flexContainer(false, true, 'column');                // Flex Container Mixin
     position: relative;
     margin: rem(15) auto;
     padding: rem(20);
@@ -23,12 +23,12 @@
 
     > h1,
     > h2 {
-      flexItem(); // Flex Item mixin
+      flexItem();                                             // Flex Item mixin
       displayFontBold();
     }
 
     &::before {
-      arrow( // Arrow mixin
+      arrow(                                                      // Arrow mixin
         arrowDirection: 'top',
         arrowHeight: 10px,
         arrowWidth: 16px,
@@ -36,53 +36,5 @@
         positioned: true
       );
     }
-  }
-}
-
-#spacheman
-  // background: red;
-
-  &:hover
-    animation: shake 0.82s ease infinite;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-    perspective: 1000px;
-
-@keyframes shake {
-  10%, 90% {
-    transform: translate3d(-1px, 0, 0);
-  }
-
-  20%, 80% {
-    transform: translate3d(2px, 0, 0);
-  }
-
-  30%, 50%, 70% {
-    transform: translate3d(-4px, 0, 0);
-  }
-
-  40%, 60% {
-    transform: translate3d(4px, 0, 0);
-  }
-}
-
-@keyframes pulse {
-  0% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 0.2;
-  }
-  40% {
-    opacity: 0.4;
-  }
-  60% {
-    opacity: 0.6;
-  }
-  80% {
-    opacity: 0.8;
-  }
-  100% {
-    opacity: 1;
   }
 }
