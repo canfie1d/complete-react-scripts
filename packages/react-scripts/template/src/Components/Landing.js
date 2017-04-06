@@ -4,7 +4,10 @@ export default class Landing extends React.Component {
   render() {
     return (
       <div className="landing">
-        <p>‍👨‍🚀</p>
+        <p>
+          ‍
+          <span id="spacheman">👨‍🚀</span>
+        </p>
         <div>
           <h1>Welcome to Helpful Human's React template.</h1>
           <h2>Check the console for application properties.</h2>
