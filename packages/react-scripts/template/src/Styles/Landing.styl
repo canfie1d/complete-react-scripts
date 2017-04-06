@@ -9,6 +9,22 @@
     font-size: rem(40);
   }
 
+  button {
+    margin: .5em
+    border: none
+    font-size: 1em
+    cursor: pointer
+    padding: .5em 1em
+    background: $white
+    displayFontBold();
+    border-radius: rem(5);
+    transition: background 250ms ease
+
+    &:hover {
+      background: darken($white, 15)
+    }
+  }
+
   div {
     flexContainer(false, true, 'column'); // Flex Container Mixin
     position: relative;
@@ -32,5 +48,53 @@
         positioned: true
       );
     }
+  }
+}
+
+#spacheman
+  // background: red;
+
+  &:hover
+    animation: shake 0.82s ease infinite;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.2;
+  }
+  40% {
+    opacity: 0.4;
+  }
+  60% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
   }
 }
