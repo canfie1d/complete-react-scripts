@@ -13,6 +13,7 @@
 // HH add poststylus
 const poststylus = require('poststylus');
 const webpack = require('webpack');
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
@@ -196,18 +197,29 @@ module.exports = {
       },
       {
         test: /\.styl$/,
-        loader: ExtractTextPlugin.extract(Object.assign({
-          fallback: 'style-loader',
-          use: [
+        loader: ExtractTextPlugin.extract(
+          Object.assign(
             {
-              // @TODO update if broken
-              loader: 'css-loader',
-              options: {
-                importLoaders: 2
-              }
-              // 
+              fallback: require.resolve('style-loader'),
+              use: [
+                {
+                  loader: require.resolve('css-loader'),
+                  options: {
+                    importLoaders: 2,
+                    minimize: true,
+                    sourceMap: true,
+                  },
+                },
+                {
+                  loader: require.resolve('stylus-loader'),
+                  options: {
+                    sourceMap: true,
+                  },
+                },
+              ],
+              //
               // UPDATED FROM FACEBOOK - kept as an example
-              // 
+              //
               //
               // fallback: require.resolve('style-loader'),
               // use: [
@@ -239,12 +251,10 @@ module.exports = {
               //   },
               // ],
             },
-            {
-              loader: 'stylus-loader'
-            }
-          ]
-        }, extractTextPluginOptions))
-      }
+            extractTextPluginOptions
+          )
+        ),
+      },
       // ** STOP ** Are you adding a new loader?
       // Remember to add the new extension(s) to the "file" loader exclusion list.
     ],
@@ -255,8 +265,8 @@ module.exports = {
       test: /\.styl$/,
       stylus: {
         default: {
-          use: [poststylus(['autoprefixer'])]
-        }
+          use: [poststylus(['autoprefixer'])],
+        },
       },
     }),
     // Makes some environment variables available in index.html.
@@ -303,7 +313,7 @@ module.exports = {
     }),
     // Note: this won't work without ExtractTextPlugin.extract(..) in `loaders`.
     new ExtractTextPlugin({
-      filename: cssFilename
+      filename: cssFilename,
     }),
     // Generate a manifest file which contains a mapping of all asset filenames
     // to their corresponding output file so that tools can pick it up without

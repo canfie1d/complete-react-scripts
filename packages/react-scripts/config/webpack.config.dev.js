@@ -210,9 +210,23 @@ module.exports = {
 
       // HH added stylus loader
       {
-        // @TODO Update if broken
         test: /\.styl$/,
-        loader: require.resolve('style-loader?sourceMap!css-loader?sourceMap!stylus-loader?sourceMap'),
+        use: [
+          require.resolve('style-loader'),
+          {
+            loader: require.resolve('css-loader'),
+            options: {
+              importLoaders: 2,
+              sourceMap: true,
+            },
+          },
+          {
+            loader: require.resolve('stylus-loader'),
+            options: {
+              sourceMap: true,
+            },
+          },
+        ],
         // UPDATE FROM FACEBBOK ON CSS LOADING KEPT FOR EXAMPLE
         // test: /\.css$/,
         // use: [
