@@ -5,8 +5,10 @@ export default class Landing extends React.Component {
     return (
       <div className="landing">
         <div className="outerspace">
-          <p className="spacheman">👨‍🚀</p>
-          <p className="rocket">🚀</p>
+          <span className="spacheman" role="img" aria-label="spaceman">
+            👨‍🚀
+          </span>
+          <span className="rocket" role="img" aria-label="rocket">🚀</span>
         </div>
         <div>
           <h1>Welcome to Helpful Human's React template.</h1>

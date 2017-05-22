@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
 import { browserHistory, Router } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
@@ -22,3 +23,4 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
+registerServiceWorker();
