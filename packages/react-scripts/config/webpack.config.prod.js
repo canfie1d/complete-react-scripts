@@ -10,8 +10,10 @@
 // @remove-on-eject-end
 'use strict';
 
-// HH add poststylus
+// HH add poststylus & CompressionPlugin
 const poststylus = require('poststylus');
+const CompressionPlugin = require('compression-webpack-plugin');
+
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -181,21 +183,26 @@ module.exports = {
       },
       {
         test: /\.styl$/,
-        loader: ExtractTextPlugin.extract(Object.assign({
-          fallback: 'style-loader',
-          use: [
+        loader: ExtractTextPlugin.extract(
+          Object.assign(
             {
-              loader: 'css-loader',
-              options: {
-                importLoaders: 2
-              }
+              fallback: 'style-loader',
+              use: [
+                {
+                  loader: 'css-loader',
+                  options: {
+                    importLoaders: 2,
+                  },
+                },
+                {
+                  loader: 'stylus-loader',
+                },
+              ],
             },
-            {
-              loader: 'stylus-loader'
-            }
-          ]
-        }, extractTextPluginOptions))
-      }
+            extractTextPluginOptions
+          )
+        ),
+      },
       // ** STOP ** Are you adding a new loader?
       // Remember to add the new extension(s) to the "url" loader exclusion list.
     ],
@@ -206,9 +213,17 @@ module.exports = {
       test: /\.styl$/,
       stylus: {
         default: {
-          use: [poststylus(['autoprefixer'])]
-        }
+          use: [poststylus(['autoprefixer'])],
+        },
       },
+    }),
+    // HH add CompressionPlugin gzipping
+    new CompressionPlugin({
+      asset: '[path].gz[query]',
+      algorithm: 'gzip',
+      test: /\.(js|css|html)$/,
+      threshold: 0,
+      minRatio: 0.8,
     }),
     // Makes some environment variables available in index.html.
     // The public URL is available as %PUBLIC_URL% in index.html, e.g.:
@@ -255,7 +270,7 @@ module.exports = {
     }),
     // Note: this won't work without ExtractTextPlugin.extract(..) in `loaders`.
     new ExtractTextPlugin({
-      filename: cssFilename
+      filename: cssFilename,
     }),
     // Generate a manifest file which contains a mapping of all asset filenames
     // to their corresponding output file so that tools can pick it up without
