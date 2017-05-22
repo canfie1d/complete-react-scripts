@@ -10,8 +10,10 @@
 // @remove-on-eject-end
 'use strict';
 
-// HH add poststylus
+// HH add poststylus & CompressionPlugin
 const poststylus = require('poststylus');
+const CompressionPlugin = require('compression-webpack-plugin');
+
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -235,6 +237,14 @@ module.exports = {
           use: [poststylus(['autoprefixer'])],
         },
       },
+    }),
+    // HH add CompressionPlugin gzipping
+    new CompressionPlugin({
+      asset: '[path].gz[query]',
+      algorithm: 'gzip',
+      test: /\.(js|css|html)$/,
+      threshold: 0,
+      minRatio: 0.8,
     }),
     // Makes some environment variables available in index.html.
     // The public URL is available as %PUBLIC_URL% in index.html, e.g.:
