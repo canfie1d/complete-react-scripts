@@ -11,11 +11,16 @@
 ###### Accessibility Tools
 - `react-aXe`
 
+###### React Addons
+- `classnames`
+- `prop-types`
+
 ###### React Router
 - `react-router`
 - `react-router-redux`
 
 ###### Redux
+- `redux`
 - `react-redux`
 - `redux-logger`
 - `redux-thunk`
@@ -25,10 +30,12 @@
 - `poststylus`
 - `stylus-loader`
 
+###### Gzip
+- `compression-webpack-plugin`
+
 ### Roadmap:
 ###### Fontloader
 ###### Configure ESLint Rules
-###### Default 404 Route
 ###### Explore perf optimizations
 
 ---

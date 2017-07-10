@@ -1,8 +1,7 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
-// import app from './app';
-function number (state = { value: 0 }, action) {
+function number(state = { value: 0 }, action) {
   const newState = Object.assign({}, state);
 
   switch (action.type) {
@@ -21,5 +20,5 @@ function number (state = { value: 0 }, action) {
 
 export default combineReducers({
   number,
-  routing: routerReducer
+  routing: routerReducer,
 });
