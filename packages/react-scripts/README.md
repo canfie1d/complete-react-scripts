@@ -25,24 +25,11 @@
 - `poststylus`
 - `stylus-loader`
 
-##### This package is modified to remove the following functionality:
-
-###### CSS
-- `autoprefixer`
-- `postcss-loader`
-- `postcss`
-
 ### Roadmap:
-
 ###### Fontloader
-- "webfontloader"
-
-###### Progressive Web App
-- "offline-plugin"
-
 ###### Configure ESLint Rules
-###### Webpack Code Chunking
-###### 404 Route
+###### Default 404 Route
+###### Explore perf optimizations
 
 ---
 We plan to stay up to date with create-react-app as often as possible.
