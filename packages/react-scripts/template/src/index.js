@@ -1,14 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
-import { Provider } from 'react-redux';
-import { browserHistory, Router } from 'react-router';
-import { syncHistoryWithStore } from 'react-router-redux';
 import createStore from './Services/Store';
-import routes from './routes';
+import createHistory from 'history/createBrowserHistory';
+import { syncHistoryWithStore } from 'react-router-redux';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
+import publicRoutes from './routes';
 import axe from 'react-axe';
+import App from './App';
 
 const store = createStore();
+const browserHistory = createHistory();
 const history = syncHistoryWithStore(browserHistory, store);
 
 if (process.env.NODE_ENV !== 'production') {
@@ -18,7 +21,9 @@ if (process.env.NODE_ENV !== 'production') {
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
-      {routes}
+      <App>
+        {publicRoutes}
+      </App>
     </Router>
   </Provider>,
   document.getElementById('root')
