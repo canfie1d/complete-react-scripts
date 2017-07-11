@@ -16,8 +16,9 @@
 - `prop-types`
 
 ###### React Router
-- `react-router`
+- `react-router-dom`
 - `react-router-redux`
+- `history`
 
 ###### Redux
 - `redux`
@@ -37,6 +38,10 @@
 ###### Fontloader
 ###### Configure ESLint Rules
 ###### Explore perf optimizations
+- `webpack-bundle-analyzer`
+###### Animated Page Transitions
+- `react-transition-group`
+- `animated`
 
 ---
 We plan to stay up to date with create-react-app as often as possible.
