@@ -44,6 +44,13 @@
 - `animated`
 
 ---
+Migrating from `1.0.9` to `1.0.10`
+
+Inside any created project that has not been ejected, run:
+
+npm install --save --save-exact react-scripts@1.0.10
+
+---
 We plan to stay up to date with create-react-app as often as possible.
 
 Note: This package is maintained for our specific needs at Helpful Human and while feature requests are encouraged, they may not align with the needs of Helpful Human.
