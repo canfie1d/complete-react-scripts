@@ -44,11 +44,11 @@
 - `animated`
 
 ---
-Migrating from `1.0.9` to `1.0.10`
+Migrating from `1.1.10` to `1.1.11`
 
 Inside any created project that has not been ejected, run:
 
-npm install --save --save-exact react-scripts@1.0.10
+npm install --save --save-exact helpful-react-scripts@1.1.11
 
 ---
 We plan to stay up to date with create-react-app as often as possible.
