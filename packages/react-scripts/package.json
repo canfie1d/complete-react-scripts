@@ -11,7 +11,7 @@
     "node": ">=6"
   },
   "bugs": {
-    "url": "https://github.com/helpfulhuman/helpful-react-scripts/issues"
+    "url": "https://github.com/canfie1d/complete-react-scripts/issues"
   },
   "files": [
     "env",
