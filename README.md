@@ -1,5 +1,5 @@
 ## Complete React Scripts
-Complete React Scripts (HRS) is a fork of [Create React App](https://github.com/facebookincubator/create-react-app) that modifies the `react-scripts` package in order to serve as a base React boilerplate project. Read the [CRS](./packages/react-scripts/README.md) docs.
+Complete React Scripts (CRS) is a fork of [Create React App](https://github.com/facebookincubator/create-react-app) that modifies the `react-scripts` package in order to serve as a base React boilerplate project. Read the [CRS](./packages/react-scripts/README.md) docs.
 
 **Get up and running in one line**
 
