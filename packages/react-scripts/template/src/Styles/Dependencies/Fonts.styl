@@ -14,16 +14,16 @@ $body-font= $helvetica;
 ////////////////////////////
 //      Font Mixins       //
 ////////////////////////////
-displayFontBold() {
+displayFontBold($color=$display-color) {
   font-family: $display-font--bold;
   font-weight: 500;
-  color: $display-color;
+  color: $color;
 }
 
-displayFont() {
+displayFont($color=$display-color) {
   font-family: $display-font;
   font-weight: 400;
-  color: $display-color;
+  color: $color;
 }
 
 bodyFont() {
