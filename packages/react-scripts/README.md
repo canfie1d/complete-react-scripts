@@ -46,7 +46,7 @@
 ---
 I plan to stay up to date with create-react-app as often as possible.
 
-Note: There is a problem with Stylus reporting error locations correctly in `Node v7.x.x^`. Use Node v6.x.x to remedy.
+Note: There is a problem with Stylus reporting error locations correctly in `Node v7.x.x^`. Use Node v6.x.x or v8.x.x to remedy.
 
 For additional information, please refer to the following documentation:
 

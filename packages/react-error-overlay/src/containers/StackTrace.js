@@ -87,11 +87,7 @@ class StackTrace extends Component<Props> {
   }
 
   render() {
-    return (
-      <div style={traceStyle}>
-        {this.renderFrames()}
-      </div>
-    );
+    return <div style={traceStyle}>{this.renderFrames()}</div>;
   }
 }
 
