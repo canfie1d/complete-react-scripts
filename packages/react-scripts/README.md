@@ -15,10 +15,8 @@
 - `classnames`
 - `prop-types`
 
-###### React Router
+###### React Router 4
 - `react-router-dom`
-- `react-router-redux`
-- `history`
 
 ###### Redux
 - `redux`
@@ -36,15 +34,15 @@
 
 ### Roadmap:
 ###### Fontloader
-###### Configure ESLint Rules
 ###### Explore perf optimizations
 - `webpack-bundle-analyzer`
 ###### Animated Page Transitions
-- `react-transition-group`
-- `animated`
+- [Transition Switch](https://github.com/canfie1d/transition-switch)
+  - `react-transition-group`
+  - `animated`
 
 ---
-I plan to stay up to date with create-react-app as often as possible.
+I plan to stay up to date with create-react-app as often as it is updated.
 
 Note: There is a problem with Stylus reporting error locations correctly in `Node v7.x.x^`. Use Node v6.x.x or v8.x.x to remedy.
 
