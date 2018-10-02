@@ -1,5 +1,8 @@
 # Complete React Scripts
 
+This package includes scripts and configuration used by [Create React App](https://github.com/facebook/create-react-app).<br>
+Please refer to its documentation:
+
 ##### Usage:
 
 `npm i create-react-app -g`<br>
@@ -9,7 +12,7 @@
 ##### This package is modified to include the following additional functionality:
 
 ###### Accessibility Tools
-- `react-aXe`
+- `react-a11y`
 
 ###### React Addons
 - `classnames`
@@ -44,7 +47,7 @@
 ---
 I plan to stay up to date with create-react-app as often as it is updated.
 
-Note: There is a problem with Stylus reporting error locations correctly in `Node v7.x.x^`. Use Node v6.x.x or v8.x.x to remedy.
+Note: There is a problem with Stylus reporting error locations correctly in `Node v7.x.x^`. Use Node v8.x.x to remedy.
 
 For additional information, please refer to the following documentation:
 
