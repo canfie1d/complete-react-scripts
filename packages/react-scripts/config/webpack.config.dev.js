@@ -8,9 +8,9 @@
 // @remove-on-eject-end
 'use strict';
 
-// CRS adds poststylus and comments out autoprefixer
-// const autoprefixer = require('autoprefixer');
+// CRS adds poststylus
 const poststylus = require('poststylus');
+
 const path = require('path');
 const webpack = require('webpack');
 const PnpWebpackPlugin = require('pnp-webpack-plugin');
@@ -308,7 +308,7 @@ module.exports = {
               sourceMaps: false,
             },
           },
-          // HH added stylus loader
+          // CRS added stylus loader
           {
             test: /\.styl$/,
             use: [
@@ -406,11 +406,6 @@ module.exports = {
         },
       },
     }),
-    // Makes some environment variables available in index.html.
-    // The public URL is available as %PUBLIC_URL% in index.html, e.g.:
-    // <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    // In development, this will be an empty string.
-    new InterpolateHtmlPlugin(env.raw),
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
       inject: true,
