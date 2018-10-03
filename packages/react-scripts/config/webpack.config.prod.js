@@ -8,13 +8,12 @@
 // @remove-on-eject-end
 'use strict';
 
-// CRS adds poststylus & CompressionPlugin
+// CRS adds poststylus, CompressionPlugin
 const poststylus = require('poststylus');
 const CompressionPlugin = require('compression-webpack-plugin');
 
-const webpack = require('webpack');
 const path = require('path');
-
+const webpack = require('webpack');
 const PnpWebpackPlugin = require('pnp-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const InlineChunkHtmlPlugin = require('react-dev-utils/InlineChunkHtmlPlugin');
@@ -342,33 +341,6 @@ module.exports = {
               compact: true,
             },
           },
-          {
-            test: /\.styl$/,
-            loader: ExtractTextPlugin.extract(
-              Object.assign(
-                {
-                  fallback: require.resolve('style-loader'),
-                  use: [
-                    {
-                      loader: require.resolve('css-loader'),
-                      options: {
-                        importLoaders: 2,
-                        minimize: true,
-                        sourceMap: true,
-                      },
-                    },
-                    {
-                      loader: require.resolve('stylus-loader'),
-                      options: {
-                        sourceMap: true,
-                      },
-                    },
-                  ],
-                },
-                extractTextPluginOptions
-              )
-            ),
-          },
           // Process any JS outside of the app with Babel.
           // Unlike the application JS, we only compile the standard ES features.
           {
@@ -403,33 +375,17 @@ module.exports = {
               sourceMaps: false,
             },
           },
-      {
-        test: /\.styl$/,
-        loader: ExtractTextPlugin.extract(
-          Object.assign(
-            {
-              fallback: require.resolve('style-loader'),
-              use: [
-                {
-                  loader: require.resolve('css-loader'),
-                  options: {
-                    importLoaders: 2,
-                    minimize: true,
-                    sourceMap: true,
-                  },
-                },
-                {
-                  loader: require.resolve('stylus-loader'),
-                  options: {
-                    sourceMap: true,
-                  },
-                },
-              ],
-            },
-            extractTextPluginOptions
-          )
-        ),
-      },
+          {
+            test: /\.styl$/,
+            loader: getStyleLoaders(
+              {
+                importLoaders: 2,
+                minimize: true,
+                sourceMap: true,
+              },
+              'stylus-loader'
+            ),
+          },
           // "postcss" loader applies autoprefixer to our CSS.
           // "css" loader resolves paths in CSS and adds assets as dependencies.
           // `MiniCSSExtractPlugin` extracts styles into CSS
@@ -516,8 +472,7 @@ module.exports = {
     ],
   },
   plugins: [
-<<<<<<< HEAD
-    // HH add autoprefixer via poststylus
+    // CRS adds autoprefixer via poststylus
     new webpack.LoaderOptionsPlugin({
       test: /\.styl$/,
       stylus: {
@@ -526,22 +481,10 @@ module.exports = {
         },
       },
     }),
-    // HH add CompressionPlugin gzipping
+    // CRS adds CompressionPlugin gzipping
     new CompressionPlugin({
-      asset: '[path].gz[query]',
-      algorithm: 'gzip',
-      test: /\.(js|css|html)$/,
-      threshold: 0,
-      minRatio: 0.8,
+      test: /\.(js|css)$/,
     }),
-    // Makes some environment variables available in index.html.
-    // The public URL is available as %PUBLIC_URL% in index.html, e.g.:
-    // <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    // In production, it will be an empty string unless you specify "homepage"
-    // in `package.json`, in which case it will be the pathname of that URL.
-    new InterpolateHtmlPlugin(env.raw),
-=======
->>>>>>> a5d2e43ae0a294e77765e1d25e26f86fd4019294
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
       inject: true,
@@ -566,8 +509,12 @@ module.exports = {
     // The public URL is available as %PUBLIC_URL% in index.html, e.g.:
     // <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     // In production, it will be an empty string unless you specify "homepage"
+    // in `package.json`, in which case it will be the pathname of that URL.
+    new InterpolateHtmlPlugin(HtmlWebpackPlugin, env.raw),
+    // This gives some necessary context to module not found errors, such as
     // the requesting resource.
     new ModuleNotFoundPlugin(paths.appPath),
+    // Makes some environment variables available to the JS code, for example:
     // if (process.env.NODE_ENV === 'production') { ... }. See `./env.js`.
     // It is absolutely essential that NODE_ENV was set to production here.
     // Otherwise React will be compiled in the very slow development mode.
