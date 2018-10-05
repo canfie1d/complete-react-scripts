@@ -41,6 +41,10 @@ Please refer to its documentation:
 
 - `compression-webpack-plugin`
 
+###### IE Support
+
+- Include IE11 polyfill
+
 ### Roadmap:
 
 ###### Fontloader
