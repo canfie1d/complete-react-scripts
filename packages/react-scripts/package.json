@@ -71,7 +71,7 @@
     "poststylus": "1.0.0",
     "prop-types": "^15.7.2",
     "react-a11y": "^1.1.0",
-    "react-redux": "6.0.1",
+    "react-redux": "5.1.1",
     "react-router-dom": "5.0.0",
     "redux": "4.0.1",
     "redux-logger": "3.0.6",
