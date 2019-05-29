@@ -39,7 +39,7 @@
   @if $wrapContent == true {
     flex-wrap : wrap;
   }
-@error $direction;
+
   @if $direction == 'column' {
     flex-direction: column;
   }
