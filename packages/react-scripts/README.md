@@ -9,38 +9,41 @@ To reduce friction in updating beyond 3.0.0, `node-sass-magic-importer`
 is now included in an attempt to deliver the same functionality that
 was included with Stylus.
 
-This package includes scripts and configuration used by [Create React App](https://github.com/facebook/create-react-app).<br>
+This package includes scripts and configuration used by [Create React App](https://github.com/facebook/create-react-app).
+
 Please refer to its documentation.
 
-##### Usage:
+## Usage:
 
-`yarn global add create-react-app`<br>
+```bash
+yarn global add create-react-app
 
-`create-react-app my-app --scripts-version complete-react-scripts`
+create-react-app my-app --scripts-version complete-react-scripts
+```
 
-##### This package is modified to include the following additional functionality:
+## This package is modified to include the following additional functionality:
 
-###### Accessibility Tools
+#### Accessibility Tools
 
 - `react-a11y`
 
-###### React Addons
+#### React Addons
 
 - `classnames`
 - `prop-types`
 
-###### React Router 5
+#### React Router 5
 
 - `react-router-dom`
 
-###### Redux
+#### Redux
 
 - `redux`
 - `react-redux`
 - `redux-logger`
 - `redux-thunk`
 
-###### node-sass-magic-importer
+#### node-sass-magic-importer
 
 - [node-sass-magic-importer](https://github.com/maoberlehner/node-sass-magic-importer)
   - node-sass-selector-importer
@@ -49,11 +52,11 @@ Please refer to its documentation.
   - node-sass-once-importer
   - node-sass-package-importer
 
-###### Gzip
+#### Gzip
 
 - `compression-webpack-plugin`
 
-###### IE Support
+#### IE Support
 
 - Includes IE11 polyfill
 
