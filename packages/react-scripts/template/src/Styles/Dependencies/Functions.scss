@@ -28,7 +28,7 @@
 ////////////////////////
 //      Flexbox       //
 ////////////////////////
-@mixin flexContainer($centerContent:false, $wrapContent:true, $inlineFlex:false) {
+@mixin flexContainer($centerContent:false, $wrapContent:true, $inlineFlex:false, $direction: 'row') {
   display   : flex;
   flex-wrap : nowrap;
 
@@ -38,6 +38,10 @@
 
   @if $wrapContent == true {
     flex-wrap : wrap;
+  }
+@error $direction;
+  @if $direction == 'column' {
+    flex-direction: column;
   }
 
   @if $centerContent == true {

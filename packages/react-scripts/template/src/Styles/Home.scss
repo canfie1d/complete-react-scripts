@@ -21,7 +21,7 @@
   }
 
   > div:first-of-type {
-    @include flexContainer(false, true, 'column');   // Flex Container Mixin
+    @include flexContainer(false, true, false, 'column');   // Flex Container Mixin
     position: relative;
     margin: rem(15) auto rem(50);
     padding: rem(60);
