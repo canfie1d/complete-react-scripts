@@ -7,9 +7,6 @@
  */
 // @remove-on-eject-end
 'use strict';
-
-// CRS adds poststylus, CompressionPlugin
-const poststylus = require('poststylus');
 const CompressionPlugin = require('compression-webpack-plugin');
 
 const fs = require('fs');
@@ -41,8 +38,8 @@ const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
 const getCacheIdentifier = require('react-dev-utils/getCacheIdentifier');
 // @remove-on-eject-end
 const postcssNormalize = require('postcss-normalize');
-// complete-react-script optional Sass
-const globImporter = require('node-sass-glob-importer');
+// complete-react-script add sass importers
+const magicImporter = require('node-sass-magic-importer');
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
@@ -54,7 +51,6 @@ const shouldInlineRuntimeChunk = process.env.INLINE_RUNTIME_CHUNK !== 'false';
 const useTypeScript = fs.existsSync(paths.appTsConfig);
 
 // style files regexes
-const stylRegex = /\.styl$/;
 const cssRegex = /\.css$/;
 const cssModuleRegex = /\.module\.css$/;
 const sassRegex = /\.(scss|sass)$/;
@@ -448,22 +444,6 @@ module.exports = function(webpackEnv) {
                 sourceMaps: false,
               },
             },
-            {
-              test: stylRegex,
-              exclude: [cssRegex, cssModuleRegex, sassRegex],
-              use: getStyleLoaders(
-                {
-                  importLoaders: 2,
-                  sourceMap: isEnvProduction && shouldUseSourceMap,
-                },
-                'stylus-loader'
-              ),
-              // Don't consider CSS imports dead code even if the
-              // containing package claims to have no side effects.
-              // Remove this when webpack adds a warning or an error for this.
-              // See https://github.com/webpack/webpack/issues/6571
-              sideEffects: true,
-            },
             // "postcss" loader applies autoprefixer to our CSS.
             // "css" loader resolves paths in CSS and adds assets as dependencies.
             // "style" loader turns CSS into JS modules that inject <style> tags.
@@ -507,7 +487,9 @@ module.exports = function(webpackEnv) {
                   sourceMap: isEnvProduction && shouldUseSourceMap,
                 },
                 'sass-loader',
-                { importer: globImporter() }
+                {
+                  importer: magicImporter(),
+                }
               ),
               // Don't consider CSS imports dead code even if the
               // containing package claims to have no side effects.
@@ -526,7 +508,10 @@ module.exports = function(webpackEnv) {
                   modules: true,
                   getLocalIdent: getCSSModuleLocalIdent,
                 },
-                'sass-loader'
+                'sass-loader',
+                {
+                  importer: magicImporter(),
+                }
               ),
             },
             // "file" loader makes sure those assets get served by WebpackDevServer.
@@ -552,15 +537,6 @@ module.exports = function(webpackEnv) {
       ],
     },
     plugins: [
-      // CRS adds autoprefixer via poststylus
-      new webpack.LoaderOptionsPlugin({
-        test: /\.styl$/,
-        stylus: {
-          default: {
-            use: [poststylus(['autoprefixer'])],
-          },
-        },
-      }),
       // CRS adds CompressionPlugin gzipping
       new CompressionPlugin(
         isEnvProduction

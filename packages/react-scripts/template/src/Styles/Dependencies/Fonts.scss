@@ -2,31 +2,31 @@
 //      Font-Family Definitions       //
 ////////////////////////////////////////
 
-$helvetica= 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+$helvetica: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
 
 ///////////////////////////////
 //      Font Variables       //
 ///////////////////////////////
-$display-font= $helvetica;
-$display-font--bold= $helvetica;
-$body-font= $helvetica;
+$display-font: $helvetica;
+$display-font--bold: $helvetica;
+$body-font: $helvetica;
 
 ////////////////////////////
 //      Font Mixins       //
 ////////////////////////////
-displayFontBold($color=$display-color) {
+@mixin displayFontBold($color: $display-color) {
   font-family: $display-font--bold;
   font-weight: 500;
   color: $color;
 }
 
-displayFont($color=$display-color) {
+@mixin displayFont($color:$display-color) {
   font-family: $display-font;
   font-weight: 400;
   color: $color;
 }
 
-bodyFont() {
+@mixin bodyFont() {
   font-family: $body-font;
   font-weight: 400;
   color: $body-color;
