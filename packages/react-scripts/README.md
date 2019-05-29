@@ -1,11 +1,11 @@
 # Complete React Scripts
 
 This package includes scripts and configuration used by [Create React App](https://github.com/facebook/create-react-app).<br>
-Please refer to its documentation:
+Please refer to its documentation.
 
 ##### Usage:
 
-`npm i create-react-app -g`<br>
+`yarn global add create-react-app`<br>
 
 `create-react-app my-app --scripts-version complete-react-scripts`
 
@@ -20,7 +20,7 @@ Please refer to its documentation:
 - `classnames`
 - `prop-types`
 
-###### React Router 4
+###### React Router 5
 
 - `react-router-dom`
 
@@ -31,11 +31,14 @@ Please refer to its documentation:
 - `redux-logger`
 - `redux-thunk`
 
-###### Stylus
+###### node-sass-magic-importer
 
-- `stylus`
-- `poststylus`
-- `stylus-loader`
+- [node-sass-magic-importer](https://github.com/maoberlehner/node-sass-magic-importer)
+  - node-sass-selector-importer
+  - node-sass-filter-importer
+  - node-sass-glob-importer
+  - node-sass-once-importer
+  - node-sass-package-importer
 
 ###### Gzip
 
@@ -43,21 +46,7 @@ Please refer to its documentation:
 
 ###### IE Support
 
-- Include IE11 polyfill
-
-### Roadmap:
-
-###### Fontloader
-
-###### Explore perf optimizations
-
-- `webpack-bundle-analyzer`
-
-###### Animated Page Transitions
-
-- [Transition Switch](https://github.com/canfie1d/transition-switch)
-  - `react-transition-group`
-  - `animated`
+- Includes IE11 polyfill
 
 ---
 
