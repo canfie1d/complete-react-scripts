@@ -1,5 +1,14 @@
 # Complete React Scripts
 
+[DEPRECATION NOTICE]
+
+Unfortunately, Stylus is no longer maintained...
+As a result, `complete-react-scripts v3.0.1`
+is discontinuing support for it in favor of `sass`.
+To reduce friction in updating beyond 3.0.0, `node-sass-magic-importer`
+is now included in an attempt to deliver the same functionality that
+was included with Stylus.
+
 This package includes scripts and configuration used by [Create React App](https://github.com/facebook/create-react-app).<br>
 Please refer to its documentation.
 
