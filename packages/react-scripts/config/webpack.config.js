@@ -96,6 +96,7 @@ module.exports = function(webpackEnv) {
   const getStyleLoaders = (
     cssOptions,
     preProcessor,
+    preProcessorOptions = {}
   ) => {
     const loaders = [
       isEnvDevelopment && require.resolve('style-loader'),
@@ -139,12 +140,14 @@ module.exports = function(webpackEnv) {
           loader: require.resolve('resolve-url-loader'),
           options: {
             sourceMap: isEnvProduction && shouldUseSourceMap,
+            ...preProcessorOptions,
           },
         },
         {
           loader: require.resolve(preProcessor),
           options: {
             sourceMap: true,
+            ...preProcessorOptions,
           },
         }
       );
@@ -544,7 +547,9 @@ module.exports = function(webpackEnv) {
                 },
                 'sass-loader',
                 {
-                  importer: magicImporter(),
+                  sassOptions: {
+                    importer: magicImporter(),
+                  },
                 }
               ),
               // Don't consider CSS imports dead code even if the
@@ -567,7 +572,9 @@ module.exports = function(webpackEnv) {
                 },
                 'sass-loader',
                 {
-                  importer: magicImporter(),
+                  sassOptions: {
+                    importer: magicImporter(),
+                  },
                 }
               ),
             },
