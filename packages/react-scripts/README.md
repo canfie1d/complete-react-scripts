@@ -15,10 +15,22 @@ Please refer to its documentation.
 
 ## Usage:
 
-```bash
-yarn global add create-react-app
+npx (npx 5.2+)
 
-create-react-app my-app --scripts-version complete-react-scripts
+```bash
+npx create-react-app my-app
+```
+
+npm (npm 6+)
+
+```bash
+npm init react-app my-app
+```
+
+yarn (yarn 0.25+)
+
+```bash
+yarn create react-app my-app --scripts-version complete-react-scripts
 ```
 
 ## This package is modified to include the following additional functionality:
