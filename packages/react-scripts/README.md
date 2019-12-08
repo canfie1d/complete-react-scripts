@@ -27,6 +27,8 @@ npm
 npm init react-app my-app  --scripts-version complete-react-scripts --template cra-template-complete
 ```
 
+yarn
+
 ```bash
 yarn create react-app test-app --scripts-version complete-react-scripts --template cra-template-complete
 ```
