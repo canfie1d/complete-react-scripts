@@ -15,10 +15,20 @@ Please refer to its documentation.
 
 ## Usage:
 
-```bash
-yarn global add create-react-app
+npx
 
-create-react-app my-app --scripts-version complete-react-scripts
+```bash
+npx create-react-app my-app  --scripts-version complete-react-scripts --template cra-template-complete
+```
+
+npm
+
+```bash
+npm init react-app my-app  --scripts-version complete-react-scripts --template cra-template-complete
+```
+
+```bash
+yarn create react-app test-app --scripts-version complete-react-scripts --template cra-template-complete
 ```
 
 ## This package is modified to include the following additional functionality:
