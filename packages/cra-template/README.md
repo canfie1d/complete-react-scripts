@@ -1,8 +1,14 @@
 # cra-template
 
-This is the official base template for [Create React App](https://github.com/facebook/create-react-app).
+This is the official base template for [Complete React Scripts](https://github.com/canfield/complete-react-scripts).
 
-If you don't specify a template (for example, `--template typescript`), this template will be used by default.
+You can utilize this template in complete-react-scripts by adding the flag `--template cra-template-complete`.
+
+example
+
+```bash
+yarn create react-app test-app --scripts-version complete-react-scripts --template cra-template-complete
+```
 
 For more information, please refer to:
 
