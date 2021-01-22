@@ -1,11 +1,14 @@
+import Store from './Contexts/AppStore';
 import './App.scss';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <div className="app">
-        <div className="app__container">{this.props.children}</div>
-      </div>
-    );
-  }
-}
+const App = props => {
+  return (
+    <Store>
+    <div className="app">
+      <div className="app__container">{props.children}</div>
+    </div>
+    </Store>
+  );
+};
+
+export default App;

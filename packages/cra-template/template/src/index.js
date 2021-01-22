@@ -1,18 +1,9 @@
-import 'react-app-polyfill/ie11';
+import React from 'react';
+import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import publicRoutes from './routes';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
-if (process.env.NODE_ENV === 'development') {
-  const a11y = require('react-a11y').default;
-  a11y(React, ReactDOM, {
-    rules: {
-      'img-uses-alt': 'off',
-      'redundant-alt': ['warn', ['image', 'photo', 'foto', 'bild']],
-    },
-  });
-}
 
 ReactDOM.render(
   <React.StrictMode>

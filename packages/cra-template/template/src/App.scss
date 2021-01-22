@@ -1,3 +1,23 @@
+@import './Styles/Dependencies/Reset.scss';
 @import './Styles/ApplicationSettings.scss';
-@import './Styles/Dependencies/*.scss';
-@import './Styles/*.scss';
+@import './Styles/Dependencies/Colors.scss';
+@import './Styles/Dependencies/Fonts.scss';
+@import './Styles/Dependencies/Functions.scss';
+@import './Styles/Dependencies/MediaQueries.scss';
+@import './Styles/Dependencies/TimingFunctions.scss';
+@import './Styles/Base.scss';
+@import './Styles/Home.scss';
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

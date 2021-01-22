@@ -1,5 +1,5 @@
 {
-  "extends": "eslint:recommended",
+  "extends": ["react-app", "eslint:recommended"],
   "env": {
     "browser": true,
     "commonjs": true,
@@ -7,7 +7,9 @@
     "es6": true
   },
   "parserOptions": {
-    "ecmaVersion": 2018
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "jsx": true
   },
   "rules": {
     "no-console": "off",

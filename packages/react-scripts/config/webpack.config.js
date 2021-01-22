@@ -7,7 +7,6 @@
  */
 // @remove-on-eject-end
 'use strict';
-const CompressionPlugin = require('compression-webpack-plugin');
 
 const fs = require('fs');
 const path = require('path');
@@ -39,8 +38,6 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 const getCacheIdentifier = require('react-dev-utils/getCacheIdentifier');
 // @remove-on-eject-end
 const postcssNormalize = require('postcss-normalize');
-// complete-react-script add sass importers
-const magicImporter = require('node-sass-magic-importer');
 
 const appPackageJson = require(paths.appPackageJson);
 
@@ -89,7 +86,7 @@ const hasJsxRuntime = (() => {
 
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
-module.exports = function(webpackEnv) {
+module.exports = function (webpackEnv) {
   const isEnvDevelopment = webpackEnv === 'development';
   const isEnvProduction = webpackEnv === 'production';
 
@@ -107,11 +104,7 @@ module.exports = function(webpackEnv) {
   const shouldUseReactRefresh = env.raw.FAST_REFRESH;
 
   // common function to get style loaders
-  const getStyleLoaders = (
-    cssOptions,
-    preProcessor,
-    preProcessorOptions = {}
-  ) => {
+  const getStyleLoaders = (cssOptions, preProcessor) => {
     const loaders = [
       isEnvDevelopment && require.resolve('style-loader'),
       isEnvProduction && {
@@ -155,7 +148,7 @@ module.exports = function(webpackEnv) {
     if (preProcessor) {
       loaders.push(
         {
-          loader: require.resolve(preProcessor),
+          loader: require.resolve('resolve-url-loader'),
           options: {
             sourceMap: isEnvProduction ? shouldUseSourceMap : isEnvDevelopment,
             root: paths.appSrc,
@@ -165,7 +158,6 @@ module.exports = function(webpackEnv) {
           loader: require.resolve(preProcessor),
           options: {
             sourceMap: true,
-            ...preProcessorOptions,
           },
         }
       );
@@ -555,12 +547,7 @@ module.exports = function(webpackEnv) {
                     ? shouldUseSourceMap
                     : isEnvDevelopment,
                 },
-                'sass-loader',
-                {
-                  sassOptions: {
-                    importer: magicImporter(),
-                  },
-                }
+                'sass-loader'
               ),
               // Don't consider CSS imports dead code even if the
               // containing package claims to have no side effects.
@@ -582,10 +569,7 @@ module.exports = function(webpackEnv) {
                     getLocalIdent: getCSSModuleLocalIdent,
                   },
                 },
-                'sass-loader',
-                {
-                  importer: magicImporter(),
-                }
+                'sass-loader'
               ),
             },
             // "file" loader makes sure those assets get served by WebpackDevServer.
@@ -611,14 +595,6 @@ module.exports = function(webpackEnv) {
       ],
     },
     plugins: [
-      // CRS adds CompressionPlugin gzipping
-      new CompressionPlugin(
-        isEnvProduction
-          ? {
-              test: /\.(js|css)$/,
-            }
-          : undefined
-      ),
       // Generates an `index.html` file with the <script> injected.
       new HtmlWebpackPlugin(
         Object.assign(
@@ -776,6 +752,8 @@ module.exports = function(webpackEnv) {
         formatter: require.resolve('react-dev-utils/eslintFormatter'),
         eslintPath: require.resolve('eslint'),
         context: paths.appSrc,
+        failOnError: false,
+        emitWarning: true,
         // ESLint class options
         cwd: paths.appPath,
         resolvePluginsRelativeTo: __dirname,
