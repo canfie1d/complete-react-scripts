@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "bootstrap": "4.x",
-    "node-sass": "4.x",
+    "sass": "^1.32.5",
     "react": "latest",
     "react-dom": "latest"
   }
