@@ -1,10 +1,20 @@
 # Complete React Scripts
 
-[DEPRECATION NOTICE]
+[v4.0.1 Breaking Changes]
+- `react-redux` has been removed in favor of React's built-in [Context API](https://reactjs.org/docs/context.html)
+
+[v4.0.1 DEPRECATION NOTICE]
+
+Unfortunately, `node-sass` is deprecated...
+As a result, `complete-react-scripts v4.0.1` is discontinuing support for it in favor of `sass` (dart sass) and since there is no suitable replacement for `node-sass-magic-importer`, glob importing is no longer supported.
+
+`react-a11y` is also deprecated and will no longer be included.
+
+[v3.0.1 DEPRECATION NOTICE]
 
 Unfortunately, Stylus is no longer maintained...
 As a result, `complete-react-scripts v3.0.1`
-is discontinuing support for it in favor of `sass`.
+is discontinuing support for it in favor of `node-sass`.
 To reduce friction in updating beyond 3.0.0, `node-sass-magic-importer`
 is now included in an attempt to deliver the same functionality that
 was included with Stylus.
@@ -35,43 +45,11 @@ yarn create react-app test-app --scripts-version complete-react-scripts --templa
 
 ## This package is modified to include the following additional functionality:
 
-#### Accessibility Tools
-
-- `react-a11y`
-
-#### React Addons
-
+#### Supporting React Libraries
+- `react-router-dom`
 - `classnames`
 - `prop-types`
-
-#### React Router 5
-
-- `react-router-dom`
-
-#### Redux
-
-- `redux`
-- `react-redux`
-- `redux-logger`
-- `redux-thunk`
-
-#### node-sass-magic-importer
-
-- [node-sass-magic-importer](https://github.com/maoberlehner/node-sass-magic-importer)
-  - node-sass-selector-importer
-  - node-sass-filter-importer
-  - node-sass-glob-importer
-  - node-sass-once-importer
-  - node-sass-package-importer
-
-#### Gzip
-
-- `compression-webpack-plugin`
-
-#### IE Support
-
-- Includes IE11 polyfill
-
+- `sass`
 ---
 
 I plan to stay up to date with create-react-app as often as it is updated.
